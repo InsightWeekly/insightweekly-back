@@ -182,3 +182,10 @@ class AnalysisView(views.APIView):
         }
         
         return Response(response_data)
+
+# Health Check
+class HealthCheckView(views.APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, *args, **kwargs):
+        return Response({"status": "ok"})
